@@ -88,4 +88,25 @@ class QueueTest extends TestCase
         $this->assertEquals("Bob", $three->pop());
         $this->assertTrue($three->isEmpty());
     }
+
+    public function testPopAndJoin()
+    {
+        $three = new Queue();
+        $three->join("Dave");
+        $three->join("Sally");
+        $three->join("Bob");
+
+        $three->pop();
+        $three->pop();
+
+        $three->join("Mary");
+
+        $this->assertEquals(2, $three->size());
+        $this->assertEquals("Bob", $three->pop());
+        $this->assertEquals(1, $three->size());
+
+        $this->assertEquals("Mary", $three->pop());
+        $this->assertTrue($three->isEmpty());
+
+    }
 }

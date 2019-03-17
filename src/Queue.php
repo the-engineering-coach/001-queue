@@ -16,7 +16,8 @@ class Queue
 
     public function join(string $person)
     {
-        $this->people[$this->size++] = $person;
+        $this->people[$this->front + $this->size] = $person;
+        $this->size++;
     }
 
     public function size() : int
