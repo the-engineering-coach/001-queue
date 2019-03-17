@@ -6,6 +6,7 @@ namespace Braddle;
 class Queue
 {
     private $isEmpty = true;
+    private $size = 0;
 
     public function isEmpty() : bool
     {
@@ -15,5 +16,11 @@ class Queue
     public function add(string $person)
     {
         $this->isEmpty = false;
+        $this->size++;
+    }
+
+    public function size() : int
+    {
+        return $this->size;
     }
 }
