@@ -16,7 +16,7 @@ class Queue
 
     public function join(string $person)
     {
-        $this->people[$this->front + $this->size] = $person;
+        $this->people[$this->getNextSpot()] = $person;
         $this->size++;
     }
 
@@ -33,5 +33,10 @@ class Queue
 
         $this->size--;
         return $this->people[$this->front++];
+    }
+
+    private function getNextSpot(): int
+    {
+        return $this->front + $this->size;
     }
 }
