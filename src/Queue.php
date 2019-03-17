@@ -5,17 +5,15 @@ namespace Braddle;
 
 class Queue
 {
-    private $isEmpty = true;
     private $size = 0;
 
     public function isEmpty() : bool
     {
-        return $this->isEmpty;
+        return 0 == $this->size;
     }
 
     public function join(string $person)
     {
-        $this->isEmpty = false;
         $this->size++;
     }
 
