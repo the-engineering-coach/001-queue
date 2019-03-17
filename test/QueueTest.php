@@ -8,7 +8,14 @@ use PHPUnit\Framework\TestCase;
 
 class QueueTest extends TestCase
 {
+    /**
+     * @var Queue
+     */
     private $empty;
+
+    /**
+     * @var Queue
+     */
     private $one;
 
     protected function setUp()
@@ -49,6 +56,36 @@ class QueueTest extends TestCase
         $three->join("Bob");
 
         $this->assertEquals(3, $three->size());
+    }
 
+    public function testEmptyQueuePop()
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage("Cannot pop an empty queue");
+
+        $this->empty->pop();
+    }
+
+    public function testOneQueuePop()
+    {
+        $this->assertEquals("Dave", $this->one->pop());
+        $this->assertTrue($this->one->isEmpty());
+    }
+
+    public function testThreeQueuePop()
+    {
+        $three = new Queue();
+        $three->join("Dave");
+        $three->join("Sally");
+        $three->join("Bob");
+
+        $this->assertEquals("Dave", $three->pop());
+        $this->assertEquals(2, $three->size());
+
+        $this->assertEquals("Sally", $three->pop());
+        $this->assertEquals(1, $three->size());
+
+        $this->assertEquals("Bob", $three->pop());
+        $this->assertTrue($three->isEmpty());
     }
 }
