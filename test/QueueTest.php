@@ -8,34 +8,37 @@ use PHPUnit\Framework\TestCase;
 
 class QueueTest extends TestCase
 {
+    private $empty;
+    private $one;
+
+    protected function setUp()
+    {
+        parent::setUp();
+
+        $this->empty = new Queue();
+
+        $this->one = new Queue();
+        $this->one->join("Dave");
+    }
+
     public function testEmptyQueue()
     {
-        $empty = new Queue();
-
-        $this->assertTrue($empty->isEmpty());
+        $this->assertTrue($this->empty->isEmpty());
     }
 
     public function testNonEmptyQueue()
     {
-        $one = new Queue();
-        $one->join("Dave");
-
-        $this->assertFalse($one->isEmpty());
+        $this->assertFalse($this->one->isEmpty());
     }
 
     public function testEmptyQueueSize()
     {
-        $empty = new Queue();
-
-        $this->assertEquals(0, $empty->size());
+        $this->assertEquals(0, $this->empty->size());
     }
 
     public function testOneQueueSize()
     {
-        $one = new Queue();
-        $one->join("Dave");
-
-        $this->assertEquals(1, $one->size());
+        $this->assertEquals(1, $this->one->size());
     }
 
     public function testThreeQueueSize()
