@@ -18,6 +18,11 @@ class QueueTest extends TestCase
      */
     private $one;
 
+    /**
+     * @var Queue
+     */
+    private $three;
+
     protected function setUp()
     {
         parent::setUp();
@@ -26,6 +31,11 @@ class QueueTest extends TestCase
 
         $this->one = new Queue();
         $this->one->join("Dave");
+
+        $this->three = new Queue();
+        $this->three->join("Dave");
+        $this->three->join("Sally");
+        $this->three->join("Bob");
     }
 
     public function testEmptyQueue()
@@ -50,12 +60,7 @@ class QueueTest extends TestCase
 
     public function testThreeQueueSize()
     {
-        $three = new Queue();
-        $three->join("Dave");
-        $three->join("Sally");
-        $three->join("Bob");
-
-        $this->assertEquals(3, $three->size());
+        $this->assertEquals(3, $this->three->size());
     }
 
     public function testEmptyQueuePop()
@@ -74,39 +79,28 @@ class QueueTest extends TestCase
 
     public function testThreeQueuePop()
     {
-        $three = new Queue();
-        $three->join("Dave");
-        $three->join("Sally");
-        $three->join("Bob");
+        $this->assertEquals("Dave", $this->three->pop());
+        $this->assertEquals(2, $this->three->size());
 
-        $this->assertEquals("Dave", $three->pop());
-        $this->assertEquals(2, $three->size());
+        $this->assertEquals("Sally", $this->three->pop());
+        $this->assertEquals(1, $this->three->size());
 
-        $this->assertEquals("Sally", $three->pop());
-        $this->assertEquals(1, $three->size());
-
-        $this->assertEquals("Bob", $three->pop());
-        $this->assertTrue($three->isEmpty());
+        $this->assertEquals("Bob", $this->three->pop());
+        $this->assertTrue($this->three->isEmpty());
     }
 
     public function testPopAndJoin()
     {
-        $three = new Queue();
-        $three->join("Dave");
-        $three->join("Sally");
-        $three->join("Bob");
+        $this->three->pop();
+        $this->three->pop();
 
-        $three->pop();
-        $three->pop();
+        $this->three->join("Mary");
 
-        $three->join("Mary");
+        $this->assertEquals(2, $this->three->size());
+        $this->assertEquals("Bob", $this->three->pop());
+        $this->assertEquals(1, $this->three->size());
 
-        $this->assertEquals(2, $three->size());
-        $this->assertEquals("Bob", $three->pop());
-        $this->assertEquals(1, $three->size());
-
-        $this->assertEquals("Mary", $three->pop());
-        $this->assertTrue($three->isEmpty());
-
+        $this->assertEquals("Mary", $this->three->pop());
+        $this->assertTrue($this->three->isEmpty());
     }
 }
