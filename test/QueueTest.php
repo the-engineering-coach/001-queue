@@ -18,7 +18,7 @@ class QueueTest extends TestCase
     public function testNonEmptyQueue()
     {
         $one = new Queue();
-        $one->add("Dave");
+        $one->join("Dave");
 
         $this->assertFalse($one->isEmpty());
     }
@@ -33,7 +33,7 @@ class QueueTest extends TestCase
     public function testOneQueueSize()
     {
         $one = new Queue();
-        $one->add("Dave");
+        $one->join("Dave");
 
         $this->assertEquals(1, $one->size());
     }
@@ -41,9 +41,9 @@ class QueueTest extends TestCase
     public function testThreeQueueSize()
     {
         $three = new Queue();
-        $three->add("Dave");
-        $three->add("Sally");
-        $three->add("Bob");
+        $three->join("Dave");
+        $three->join("Sally");
+        $three->join("Bob");
 
         $this->assertEquals(3, $three->size());
 

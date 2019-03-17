@@ -13,7 +13,7 @@ class Queue
         return $this->isEmpty;
     }
 
-    public function add(string $person)
+    public function join(string $person)
     {
         $this->isEmpty = false;
         $this->size++;
