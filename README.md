@@ -6,7 +6,7 @@ If you're looking to learn Test-Driven Development from a hands-on perspective, 
 
 Watch the Full Tutorial on YouTube
 
-[![Episode 001 of Testing All The Things implementing a Queue Abstract Data Type using Test Driven Development]([https://img.youtube.com/vi/YEL316oCUew/0.jpg](https://img.youtube.com/vi/04FzlrMKPTM/0.jpg))](https://www.youtube.com/watch?v=YEL316oCUew)
+[![TDD for Beginners: Building a Queue in PHP with PHPUnit]([https://img.youtube.com/vi/04FzlrMKPTM/0.jpg]([https://img.youtube.com/vi/04FzlrMKPTM/0.jpg](https://img.youtube.com/vi/04FzlrMKPTM/0.jpg)))](https://www.youtube.com/watch?v=04FzlrMKPTM)
 
 ## About the Project
 This project is a practical example of how to apply the TDD methodology to a real programming problem. We start with a simple, failing test and build out a complete, robust data structure, one small step at a time. The code is written in PHP and uses the PHPUnit testing framework.
