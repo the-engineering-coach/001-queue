@@ -6,7 +6,8 @@ If you're looking to learn Test-Driven Development from a hands-on perspective, 
 
 Watch the Full Tutorial on YouTube
 
-[![TDD for Beginners: Building a Queue in PHP with PHPUnit]([https://img.youtube.com/vi/04FzlrMKPTM/0.jpg]([https://img.youtube.com/vi/04FzlrMKPTM/0.jpg](https://img.youtube.com/vi/04FzlrMKPTM/0.jpg)))](https://www.youtube.com/watch?v=04FzlrMKPTM)
+[![TDD for Beginners: Building a Queue in PHP with PHPUnit
+](https://img.youtube.com/vi/04FzlrMKPTM/0.jpg)](https://www.youtube.com/watch?v=04FzlrMKPTM)
 
 ## About the Project
 This project is a practical example of how to apply the TDD methodology to a real programming problem. We start with a simple, failing test and build out a complete, robust data structure, one small step at a time. The code is written in PHP and uses the PHPUnit testing framework.
@@ -43,9 +44,13 @@ composer install
 
 You should see all tests pass! From there, you can experiment with the code or write your own tests to continue learning.
 
-Let's Connect
+## About The Engineering Coach
+The Engineering Coach is a YouTube channel dedicated to helping software engineers and engineering managers improve their skills and craft. We provide practical advice and tutorials on topics that matter in the real world of software development.
+
+## Let's Connect
 For more software engineering tutorials and coaching, subscribe to The Engineering Coach on YouTube. You can also connect with me on Bluesky or Mastodon.
 
 YouTube: https://www.youtube.com/c/TheEngineeringCoach
 Mastodon: https://mastodon.social/@braddle
 BLuesky: https://bsky.app/profile/braddle1.bsky.social
+
